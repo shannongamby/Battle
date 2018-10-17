@@ -7,3 +7,13 @@ feature "submitting names" do
     expect(page).to have_content "Adam vs. Steve"
   end
 end
+
+feature "viewing HP" do
+  scenario 'can see HP of player 2' do
+    visit('/')
+    fill_in :player_1_name, with: "Adam"
+    fill_in :player_2_name, with: "Steve"
+    click_button "Submit"
+    expect(page).to have_content "Steve: 100 HP"
+  end
+end
