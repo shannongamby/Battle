@@ -14,8 +14,8 @@ describe Player do
     expect(adam.hp).to eq 50
   end
 
-  it "should decrease HP by 10 when attacked" do
-    adam.attack(steve)
+  it "should decrease HP by 10" do
+    steve.decrease_hp
     expect(steve.hp).to eq 40
   end
 
