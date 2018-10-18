@@ -9,6 +9,14 @@ class Game
     @finished = false
   end
 
+  def self.new_game(player_1, player_2)
+    @@game = Game.new(player_1, player_2)
+  end
+
+  def self.game
+    @@game
+  end
+
   def attack(player)
     player.decrease_hp
     if player.dead?
