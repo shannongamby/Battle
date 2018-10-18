@@ -4,6 +4,10 @@ require_relative 'lib/game'
 
 class Battle < Sinatra::Base
 
+  before do
+    @game = Game.game
+  end
+
   get '/' do
     erb :index
   end
@@ -16,12 +20,10 @@ class Battle < Sinatra::Base
   end
 
   get '/play' do
-    @game = Game.game
     erb :play
   end
 
   get '/attack' do
-    @game = Game.game
     if @game.current_turn == @game.player_1
       @game.attack(@game.player_2)
     elsif @game.current_turn == @game.player_2
@@ -31,7 +33,6 @@ class Battle < Sinatra::Base
   end
 
   post '/switch-turns' do
-    @game = Game.game
     @game.switch_turns
     redirect '/play'
   end
