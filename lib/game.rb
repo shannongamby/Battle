@@ -10,11 +10,11 @@ class Game
   end
 
   def self.new_game(player_1, player_2)
-    @@game = Game.new(player_1, player_2)
+    @game = Game.new(player_1, player_2)
   end
 
   def self.game
-    @@game
+    @game
   end
 
   def attack(player)
