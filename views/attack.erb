@@ -1,6 +1,6 @@
-<h1>You attacked <%=@game.player_2.name%>!</h1>
+<h1><%=@game.current_player.name%> attacked <%=@game.opposing_player.name%>!</h1>
 
 
-<form action=/play method="get">
-  <input type="submit" value="Attack again">
+<form action="/switch-turns" method="post">
+  <input type="submit" value="OK">
 </form>

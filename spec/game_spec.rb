@@ -17,4 +17,8 @@ describe Game do
     expect(player_2).to receive(:decrease_hp)
     game.attack(player_2)
   end
+
+  it "is player 1's turn at the beginning" do
+    expect(game.current_turn).to eq player_1
+  end
 end
