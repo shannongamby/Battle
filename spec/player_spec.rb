@@ -15,6 +15,7 @@ describe Player do
   end
 
   it "should decrease HP by 10" do
+    allow(Kernel).to receive(:rand).and_return(10)
     steve.decrease_hp
     expect(steve.hp).to eq 40
   end
@@ -24,6 +25,7 @@ describe Player do
   end
 
   it "should be dead if HP is 0" do
+    allow(Kernel).to receive(:rand).and_return(10)
     5.times do
       steve.decrease_hp
     end

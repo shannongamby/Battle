@@ -6,6 +6,7 @@ feature "attacking player 2" do
   end
 
   scenario 'after attack HP reduced by 10' do
+    allow(Kernel).to receive(:rand).and_return(10)
     sign_in_and_play
     click_button "ATTACK"
     click_button "OK"

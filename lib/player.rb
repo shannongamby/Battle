@@ -9,8 +9,9 @@ class Player
   end
 
   def decrease_hp
-    @hp -= 10
-    if @hp == 0
+    @hp -= Kernel.rand(5..15)
+    if @hp <= 0
+      @hp = 0
       @dead = true
     end
   end
