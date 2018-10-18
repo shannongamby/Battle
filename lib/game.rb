@@ -6,10 +6,14 @@ class Game
     @player_1 = player_1
     @player_2 = player_2
     @current_turn = @player_1
+    @finished = false
   end
 
   def attack(player)
     player.decrease_hp
+    if player.dead?
+      @finished = true
+    end
   end
 
   def current_player
@@ -30,6 +34,10 @@ class Game
     elsif @current_turn == @player_2
       @current_turn = @player_1
     end
+  end
+
+  def finished?
+    @finished
   end
 
 end

@@ -19,4 +19,15 @@ describe Player do
     expect(steve.hp).to eq 40
   end
 
+  it "should be alive at start of game" do
+    expect(adam.dead?).to eq false
+  end
+
+  it "should be dead if HP is 0" do
+    5.times do
+      steve.decrease_hp
+    end
+    expect(steve.dead?).to eq true
+  end
+
 end

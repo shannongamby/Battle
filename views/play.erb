@@ -5,6 +5,14 @@
 <br>
 <br>
 
+<% if !@game.finished? %>
 <form action=/attack method="get">
   <input type="submit" value="ATTACK!">
 </form>
+<% elsif @game.finished? %>
+<%= @game.current_player.name %>: You Lose
+<br>
+<form action=/ method="get">
+  <input type="submit" value="Play again">
+</form>
+<% end %>
